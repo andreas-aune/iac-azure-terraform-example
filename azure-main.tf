@@ -1,3 +1,13 @@
+#Configure the state location
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "workshop1-cloud"
+    storage_account_name  = "accountworkshop1"
+    container_name        = "tf-state"
+    key                   = "terraform.tfstate"
+  }
+}
+
 #Configure the Azure Provider
 provider "azurerm" {
   version = ">= 2.33"
